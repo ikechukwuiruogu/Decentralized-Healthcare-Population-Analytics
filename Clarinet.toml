@@ -1,21 +1,39 @@
 [project]
-name = "Decentralized-Healthcare-Population-Analytics"
-description = ""
+name = 'Decentralized-Healthcare-Population-Analytics'
+description = ''
 authors = []
 telemetry = true
-cache_dir = "./.cache"
+cache_dir = './.cache'
+requirements = []
+[contracts.analytics-protocol]
+path = 'contracts/analytics-protocol.clar'
+clarity_version = 2
+epoch = 2.5
 
-# [contracts.counter]
-# path = "contracts/counter.clar"
+[contracts.data-provider-verification]
+path = 'contracts/data-provider-verification.clar'
+clarity_version = 2
+epoch = 2.5
 
+[contracts.insight-distribution]
+path = 'contracts/insight-distribution.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.population-definition]
+path = 'contracts/population-definition.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.privacy-preservation]
+path = 'contracts/privacy-preservation.clar'
+clarity_version = 2
+epoch = 2.5
 [repl.analysis]
-passes = ["check_checker"]
-check_checker = { trusted_sender = false, trusted_caller = false, callee_filter = false }
+passes = ['check_checker']
 
-# Check-checker settings:
-# trusted_sender: if true, inputs are trusted after tx_sender has been checked.
-# trusted_caller: if true, inputs are trusted after contract-caller has been checked.
-# callee_filter: if true, untrusted data may be passed into a private function without a
-# warning, if it gets checked inside. This check will also propagate up to the
-# caller.
-# More informations: https://www.hiro.so/blog/new-safety-checks-in-clarinet
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
